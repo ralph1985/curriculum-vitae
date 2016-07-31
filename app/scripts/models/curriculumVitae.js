@@ -15,10 +15,10 @@ CurriculumVitae.Models = CurriculumVitae.Models || {};
     defaults: {
     },
 
-    validate: function(attrs, options) {
+    validate: function(/*attrs, options*/) {
     },
 
-    parse: function(response, options)  {
+    parse: function(response/*, options*/)  {
       return response;
     }
   });
