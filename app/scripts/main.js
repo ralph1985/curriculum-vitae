@@ -1,7 +1,7 @@
-/*global curriculumVitae, $*/
+/*global CurriculumVitae, $*/
 
 
-window.curriculumVitae = {
+window.CurriculumVitae = {
   Models: {},
   Collections: {},
   Views: {},
@@ -14,5 +14,5 @@ window.curriculumVitae = {
 
 $(document).ready(function () {
   'use strict';
-  curriculumVitae.init();
+  CurriculumVitae.init();
 });
