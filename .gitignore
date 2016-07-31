@@ -206,7 +206,6 @@ fabric.properties
 
 
 ### Other ###
-dist
 test/temp
 app/bower_components
 .tmp
