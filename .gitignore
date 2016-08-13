@@ -181,10 +181,10 @@ fabric.properties
 ### PhpStorm Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
-# *.iml
-# modules.xml
 # .idea/misc.xml
+# *.iml
 # *.ipr
+# modules.xml
 
 
 ### Linux ###
@@ -202,11 +202,12 @@ fabric.properties
 
 ### Sass ###
 .sass-cache/
-*.css.map
+app/styles/*.css
+app/styles/*.css.map
 
 
 ### Other ###
-test/temp
-app/bower_components
 .tmp
+app/bower_components
+test/temp
 test/bower_components/
