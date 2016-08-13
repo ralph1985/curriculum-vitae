@@ -12,14 +12,43 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
             'job/:jobId': 'job',            // #mo2o
             'job/:jobId/:projectId': 'job'  // #mo2o/iberostar
         },
+
+        $container: $('#primary-content'),
+
+        initialize: function () {
+
+            this.collection = new CurriculumVitae.Collections.CurriculumVitae();
+            this.collection.fetch({ajaxSync: false});
+
+            // APP.helpers.debug(this.collection);
+
+            // this.index();
+
+            // start backbone watching url changes
+            Backbone.history.start();
+
+        },
+
         index: function () {
             // debugger;
+
+            // this.$el.html(
+            //     this.template({notes: this.collection.toJSON()})
+            // );
+
+            return this;
         },
         profile: function () {
             // debugger;
         },
         job: function (jobId, projectId) {
-            // debugger;
+
+            var view = new CurriculumVitae.Views.CurriculumVitae({
+                model: this.collection.get(jobId)
+            });
+
+            this.$container.html(view.render().$el);
+
         }
     });
 
@@ -29,7 +58,5 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
         // debugger;
         // alert(actions);
     });
-
-    Backbone.history.start();
 
 })();

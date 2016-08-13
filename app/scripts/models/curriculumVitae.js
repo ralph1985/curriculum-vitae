@@ -3,24 +3,23 @@
 CurriculumVitae.Models = CurriculumVitae.Models || {};
 
 (function () {
-  'use strict';
+    'use strict';
 
-  CurriculumVitae.Models.CurriculumVitae = Backbone.Model.extend({
+    CurriculumVitae.Models.CurriculumVitae = Backbone.Model.extend({
 
-    url: '',
+        url: 'http://myapi.com/',
 
-    initialize: function() {
-    },
+        initialize: function () {
+        },
 
-    defaults: {
-    },
+        defaults: {},
 
-    validate: function(/*attrs, options*/) {
-    },
+        validate: function (/*attrs, options*/) {
+        },
 
-    parse: function(response/*, options*/)  {
-      return response;
-    }
-  });
+        parse: function (response/*, options*/) {
+            return response;
+        }
+    });
 
 })();

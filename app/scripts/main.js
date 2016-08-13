@@ -2,17 +2,19 @@
 
 
 window.CurriculumVitae = {
-  Models: {},
-  Collections: {},
-  Views: {},
-  Routers: {},
-  init: function () {
-    'use strict';
-    console.log('Hello from Backbone!');
-  }
+    Models: {},
+    Collections: {},
+    Views: {},
+    Routers: {},
+    init: function () {
+        'use strict';
+
+        console.log('Hello from Backbone!');
+    }
 };
 
 $(document).ready(function () {
-  'use strict';
-  CurriculumVitae.init();
+    'use strict';
+
+    CurriculumVitae.init();
 });

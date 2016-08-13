@@ -7,6 +7,7 @@ CurriculumVitae.Collections = CurriculumVitae.Collections || {};
 
   CurriculumVitae.Collections.CurriculumVitae = Backbone.Collection.extend({
 
+    localStorage: new Backbone.LocalStorage("CurriculumVitaeCollection"),
     model: CurriculumVitae.Models.CurriculumVitae
 
   });

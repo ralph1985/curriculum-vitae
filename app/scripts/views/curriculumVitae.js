@@ -3,28 +3,28 @@
 CurriculumVitae.Views = CurriculumVitae.Views || {};
 
 (function () {
-  'use strict';
+    'use strict';
 
-  CurriculumVitae.Views.CurriculumVitae = Backbone.View.extend({
+    CurriculumVitae.Views.CurriculumVitae = Backbone.View.extend({
 
-    template: JST['app/scripts/templates/curriculumVitae.ejs'],
+        template: JST['app/scripts/templates/curriculumVitae.ejs'],
 
-    tagName: 'div',
+        tagName: 'div',
 
-    id: '',
+        id: '',
 
-    className: '',
+        className: '',
 
-    events: {},
+        events: {},
 
-    initialize: function () {
-      this.listenTo(this.model, 'change', this.render);
-    },
+        initialize: function () {
+            this.listenTo(this.model, 'change', this.render);
+        },
 
-    render: function () {
-      this.$el.html(this.template(this.model.toJSON()));
-    }
+        render: function () {
+            this.$el.html(this.template(this.model.toJSON()));
+        }
 
-  });
+    });
 
 })();
