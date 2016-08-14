@@ -13,21 +13,13 @@
 <body>
 <div class="container">
     <div class="header">
-        <ul class="nav nav-pills pull-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-
-    <div class="row text-left">
-        <div class="col-md-offset-4">
-            <h2>Now Try,</h2>
-            <h4><b>yo backbone:router</b> &lt;router&gt;</h4>
-            <h4><b>yo backbone:collection</b> &lt;collection&gt;</h4>
-            <h4><b>yo backbone:model </b> &lt;model&gt;</h4>
-            <h4><b>yo backbone:view </b> &lt;view&gt;</h4>
-        </div>
+        <nav>
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#/job/mo2o">Job</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </div>
 
     <div id="primary-content">
@@ -35,7 +27,6 @@
 
     <div class="footer">
     </div>
-
 </div>
 
 <script>
@@ -81,7 +72,9 @@
 <script src="scripts/main.js"></script>
 <script src="scripts/templates.js"></script>
 <script src="scripts/views/curriculumVitae.js"></script>
+<script src="scripts/views/job.js"></script>
 <script src="scripts/models/curriculumVitae.js"></script>
+<script src="scripts/models/job.js"></script>
 <script src="scripts/collections/curriculumVitae.js"></script>
 <script src="scripts/routes/curriculumVitae.js"></script>
 <!-- endbuild -->

@@ -5,8 +5,8 @@ CurriculumVitae.Views = CurriculumVitae.Views || {};
 (function () {
     'use strict';
 
-    CurriculumVitae.Views.CurriculumVitae = Backbone.View.extend({
-        template: JST['app/scripts/templates/curriculumVitae.ejs'],
+    CurriculumVitae.Views.Job = Backbone.View.extend({
+        template: JST['app/scripts/templates/job.ejs'],
         tagName: 'div',
         id: '',
         className: '',

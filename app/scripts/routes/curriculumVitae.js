@@ -36,19 +36,19 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
             //     this.template({notes: this.collection.toJSON()})
             // );
 
-            return this;
+            return this.$container.html('');
         },
         profile: function () {
             // debugger;
         },
         job: function (jobId, projectId) {
 
-            var view = new CurriculumVitae.Views.CurriculumVitae({
-                model: this.collection.get(jobId)
+            var view = new CurriculumVitae.Views.Job({
+                // model: this.collection.get(jobId)
+                model: new CurriculumVitae.Models.Job()
             });
 
-            this.$container.html(view.render().$el);
-
+            return this.$container.html(view.render());
         }
     });
 

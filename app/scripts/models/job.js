@@ -5,8 +5,7 @@ CurriculumVitae.Models = CurriculumVitae.Models || {};
 (function () {
     'use strict';
 
-    CurriculumVitae.Models.CurriculumVitae = Backbone.Model.extend({
-
+    CurriculumVitae.Models.Job = Backbone.Model.extend({
         url: 'http://myapi.com/',
         initialize: function () {
         },
