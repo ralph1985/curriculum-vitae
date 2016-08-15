@@ -1,0 +1,22 @@
+[
+    {
+        "id": "mo2o",
+        "name": "Mobile One2One",
+        "description": "Desarrollador de webs móviles"
+    },
+    {
+        "id": "unidad-editorial",
+        "name": "Unidad Editorial",
+        "description": "Soporte Ad Server"
+    },
+    {
+        "id": "geanet",
+        "name": "Geanet",
+        "description": "Desarrollador PHP"
+    },
+    {
+        "id": "comnet",
+        "name": "ComNet ISP",
+        "description": "Desarrollador PHP"
+    }
+]
