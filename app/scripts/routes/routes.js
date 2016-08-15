@@ -21,14 +21,6 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
             var _self = this;
 
             _self.listJobs = new CurriculumVitae.Collections.Jobs();
-            _self.listJobs.fetch({
-                success: function () {
-                    console.log('JSON file (jobs.json) load was successful', _self.listJobs);
-                },
-                error: function () {
-                    console.log('There was some error in loading and processing the JSON file (jobs.json)');
-                }
-            });
 
             // this.index();
 
@@ -43,28 +35,52 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
         },
         jobs: function (jobId, projectId) {
 
-            var jobsListView = new CurriculumVitae.Views.JobsList({
-                collection: this.listJobs
-            });
+            var _self = this,
 
-            this.$container.html(jobsListView.render());
+                renderView = function () {
+
+                    // Load the jobs list
+                    var jobsListView = new CurriculumVitae.Views.JobsList({
+                        collection: _self.listJobs
+                    });
+
+                    _self.$container.html(jobsListView.render());
 
 
-            // Load selected job
-            if (!!jobId) {
-                var jobView = new CurriculumVitae.Views.Job({
-                    model: this.listJobs.get(jobId)
+                    // Load the selected job
+                    if (!!jobId) {
+                        var jobView = new CurriculumVitae.Views.Job({
+                            model: _self.listJobs.get(jobId)
+                        });
+
+                        _self.$container.find('#job-content').html(jobView.render());
+                    } else {
+                        _self.$container.find('#job-content').html('');
+                    }
+
+
+                    // Load the selected project
+                    if (!!projectId) {
+
+                    }
+                };
+
+
+            if (_self.listJobs.length === 0) {
+
+                _self.listJobs.fetch({
+                    success: function () {
+                        console.log('JSON file (jobs.json) load was successful', _self.listJobs);
+                    },
+                    error: function () {
+                        console.log('There was some error in loading and processing the JSON file (jobs.json)');
+                    }
+                }).done(function () {
+                    renderView();
                 });
 
-                this.$container.find('#job-content').html(jobView.render());
             } else {
-                this.$container.find('#job-content').html('');
-            }
-
-
-            // Load selected project
-            if (!!projectId) {
-
+                renderView();
             }
 
 
