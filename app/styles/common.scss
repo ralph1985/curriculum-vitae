@@ -4,8 +4,6 @@ body {
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 /* Custom page header */
@@ -26,8 +24,8 @@ body {
   .header,
   .footer {
   }
+
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
   }
 }
