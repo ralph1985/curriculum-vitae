@@ -1,3 +1,19 @@
-<h2><%= job.name %></h2>
+<div>
+    <h2><%= job.name %></h2>
 
-<p><%= job.description %></p>
+    <p><%= job.description %></p>
+
+    <div>
+        <ul>
+            <% _.each(job.projects, function(project) { %>
+            <li>
+                <a href="#jobs/<%= job.id %>/<%= project.id %>">
+                    <%= project.name %>
+                </a>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <div id="project-content"></div>
+</div>

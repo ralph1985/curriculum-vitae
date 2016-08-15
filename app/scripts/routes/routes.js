@@ -12,7 +12,7 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
             'jobs': 'jobs',                     // #jobs
             'jobs/:jobId': 'jobs',              // #jobs/mo2o
             'jobs/:jobId/:projectId': 'jobs',   // #jobs/mo2o/iberostar
-            'contact': 'contact',               // #contact
+            'contact': 'contact'                // #contact
         },
 
         $container: $('#primary-content'),
@@ -46,23 +46,35 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
 
                     _self.$container.html(jobsListView.render());
 
+                    var jobContent = _self.$container.find('#job-content');
 
                     // Load the selected job
                     if (!!jobId) {
-                        var jobView = new CurriculumVitae.Views.Job({
-                            model: _self.listJobs.get(jobId)
-                        });
+                        var jobModel = _self.listJobs.get(jobId),
+                            jobView = new CurriculumVitae.Views.Job({
+                                model: jobModel
+                            });
 
-                        _self.$container.find('#job-content').html(jobView.render());
+
+                        jobContent.html(jobView.render());
+
+                        var projectContent = jobContent.find('#project-content');
+
+                        // Load the selected project
+                        if (!!projectId) {
+                            var projectsCollection = new CurriculumVitae.Collections.Projects(jobModel.get('projects')),
+                                projectView = new CurriculumVitae.Views.Project({
+                                    model: projectsCollection.get(projectId)
+                                });
+
+                            projectContent.html(projectView.render());
+                        } else {
+                            projectContent.html('');
+                        }
                     } else {
-                        _self.$container.find('#job-content').html('');
+                        jobContent.html('');
                     }
 
-
-                    // Load the selected project
-                    if (!!projectId) {
-
-                    }
                 };
 
 

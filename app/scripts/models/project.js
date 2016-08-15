@@ -5,15 +5,13 @@ CurriculumVitae.Models = CurriculumVitae.Models || {};
 (function () {
     'use strict';
 
-    CurriculumVitae.Models.Job = Backbone.Model.extend({
-        // url: 'data/jobs.json',
+    CurriculumVitae.Models.Project = Backbone.Model.extend({
         initialize: function () {
         },
         defaults: {
             id: '',
             name: '',
-            description: '',
-            projects: new CurriculumVitae.Collections.Projects()
+            description: ''
         },
         idAttribute: 'id',
         validate: function (attrs/*, options*/) {
