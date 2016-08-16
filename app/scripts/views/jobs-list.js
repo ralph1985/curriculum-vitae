@@ -17,7 +17,7 @@ CurriculumVitae.Views = CurriculumVitae.Views || {};
         },
         render: function () {
             return this.template({
-                jobs: this.collection.toJSON()
+                jobs: this.collection
             });
         }
     });

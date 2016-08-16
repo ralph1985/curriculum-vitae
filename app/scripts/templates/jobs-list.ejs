@@ -1,10 +1,10 @@
 <div>
     <div>
         <ul>
-            <% _.each(jobs, function(job) { %>
+            <% jobs.each(function(job) { %>
             <li>
-                <a href="#jobs/<%= job.id %>">
-                    <%= job.name %>
+                <a href="#jobs/<%= job.get('id') %>">
+                    <%= job.get('name') %>
                 </a>
             </li>
             <% }); %>
