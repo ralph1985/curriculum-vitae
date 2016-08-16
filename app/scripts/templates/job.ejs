@@ -1,13 +1,13 @@
 <div>
-    <h2><%= job.name %></h2>
+    <h2><%= job.get('name') %></h2>
 
-    <p><%= job.description %></p>
+    <p><%= job.get('description') %></p>
 
     <div>
         <ul>
-            <% job.projects.each(function(project) { %>
+            <% job.get('projects').each(function(project) { %>
             <li>
-                <a href="#jobs/<%= job.id %>/<%= project.id %>">
+                <a href="#jobs/<%= job.get('id') %>/<%= project.get('id') %>">
                     <%= project.get('name') %>
                 </a>
             </li>
