@@ -62,10 +62,9 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
 
                         // Load the selected project
                         if (!!projectId) {
-                            var projectsCollection = new CurriculumVitae.Collections.Projects(jobModel.get('projects')),
-                                projectView = new CurriculumVitae.Views.Project({
-                                    model: projectsCollection.get(projectId)
-                                });
+                            var projectView = new CurriculumVitae.Views.Project({
+                                model: jobModel.get('projects').get(projectId)
+                            });
 
                             projectContent.html(projectView.render());
                         } else {

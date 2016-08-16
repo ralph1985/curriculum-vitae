@@ -5,10 +5,10 @@
 
     <div>
         <ul>
-            <% _.each(job.projects, function(project) { %>
+            <% job.projects.each(function(project) { %>
             <li>
                 <a href="#jobs/<%= job.id %>/<%= project.id %>">
-                    <%= project.name %>
+                    <%= project.get('name') %>
                 </a>
             </li>
             <% }); %>

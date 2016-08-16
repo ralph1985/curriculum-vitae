@@ -34,6 +34,10 @@ CurriculumVitae.Models = CurriculumVitae.Models || {};
             }
         },
         parse: function (response/*, options*/) {
+
+            // Parse projects as "Collections.Projects"
+            response.projects = new CurriculumVitae.Collections.Projects(response.projects);
+
             return response;
         }
     });
