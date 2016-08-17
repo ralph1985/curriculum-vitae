@@ -17,6 +17,8 @@ window.CurriculumVitae = {
         //     console.log(actions);
         // });
 
+        var mainMenuView = new CurriculumVitae.Views.Menu();
+        mainMenuView.render();
 
         console.trace();
 
@@ -32,8 +34,5 @@ $(document).ready(function () {
     $.when(CurriculumVitae.Config.loadLocales())
         .done(function () {
             CurriculumVitae.init();
-
-            var mainMenuView = new CurriculumVitae.Views.Menu();
-            $('#main-menu').html(mainMenuView.render());
         });
 });

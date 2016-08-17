@@ -1,4 +1,4 @@
-/*global CurriculumVitae, Backbone, JST*/
+/*global CurriculumVitae, Backbone, JST, $*/
 
 CurriculumVitae.Views = CurriculumVitae.Views || {};
 
@@ -7,14 +7,34 @@ CurriculumVitae.Views = CurriculumVitae.Views || {};
 
     CurriculumVitae.Views.Menu = Backbone.View.extend({
         template: JST['app/scripts/templates/menu.ejs'],
-        tagName: 'div',
+        tagName: 'ul',
         id: '',
         className: '',
         events: {},
+
+        $container: $('#main-menu'),
+
         initialize: function () {
         },
+
         render: function () {
-            return this.template();
+            this.$container.html(this.template());
+            this.bindEvents();
+            return this;
+        },
+
+        bindEvents: function () {
+            this.$container.find('#select-languages')
+                .off()
+                .on('change', this.changeLanguage);
+        },
+
+        changeLanguage: function (ev) {
+            ev.preventDefault();
+
+            CurriculumVitae.Config.changeSelectedLanguage($(ev.target).val());
+
+            window.location.reload();
         }
     });
 })();

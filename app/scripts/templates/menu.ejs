@@ -1,6 +1,26 @@
 <ul class="nav nav-pills">
-    <li><a href="#"><%= t('menu.home') %></a></li>
-    <li><a href="#profile"><%= t('menu.profile') %></a></li>
-    <li><a href="#jobs"><%= t('menu.jobs') %></a></li>
-    <li><a href="#contact"><%= t('menu.contact') %></a></li>
+    <li>
+        <a href="#"><%= t('menu.home') %></a>
+    </li>
+    <li>
+        <a href="#profile"><%= t('menu.profile') %></a>
+    </li>
+    <li>
+        <a href="#jobs"><%= t('menu.jobs') %></a>
+    </li>
+    <li>
+        <a href="#contact"><%= t('menu.contact') %></a>
+    </li>
+    <li>
+        <select id="select-languages">
+            <% _.each(CurriculumVitae.Config.supportedLanguages, function(language) { %>
+            <option
+                    value="<%= language.id %>"
+                    <% if (CurriculumVitae.Config.selectedLanguage === language.id) { %>
+                    selected
+                    <% } %>
+            ><%= language.name %></option>
+            <% }); %>
+        </select>
+    </li>
 </ul>
