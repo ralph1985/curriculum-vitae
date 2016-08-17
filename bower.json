@@ -6,7 +6,6 @@
     "jquery": "~2.1.0",
     "backbone": "~1.1.0",
     "lodash": "~2.4.1",
-    "backbone-localstorage": "git@github.com:jeromegn/Backbone.localStorage.git#~1.1.16",
     "polyglot": "^2.0.0"
   },
   "devDependencies": {
