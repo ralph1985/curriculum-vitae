@@ -1,0 +1,34 @@
+[
+    {
+        "id": "mo2o",
+        "name": "Mobile One2One",
+        "description": "Desarrollador de webs móviles",
+        "projects": [
+            {
+                "id": "iberostar",
+                "name": "IBEROSTAR Hotels & Resorts",
+                "description": "asdf asdf"
+            },
+            {
+                "id": "carrefour",
+                "name": "Carrefour Supermercado",
+                "description": "asdf asdf"
+            }
+        ]
+    },
+    {
+        "id": "unidad-editorial",
+        "name": "Unidad Editorial",
+        "description": "Soporte Ad Server"
+    },
+    {
+        "id": "geanet",
+        "name": "Geanet",
+        "description": "Desarrollador PHP"
+    },
+    {
+        "id": "comnet",
+        "name": "ComNet ISP",
+        "description": "Desarrollador PHP"
+    }
+]

@@ -236,7 +236,7 @@ module.exports = function (grunt) {
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/{,*/}*.*',
                         'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*.*',
-                        'data/*.json'
+                        'data/**/*.json'
                     ]
                 }, {
                     src: 'node_modules/apache-server-configs/dist/.htaccess',

@@ -6,6 +6,7 @@ window.CurriculumVitae = {
     Collections: {},
     Views: {},
     Routers: {},
+    Config: {},
     init: function () {
         'use strict';
 

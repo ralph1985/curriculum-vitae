@@ -6,7 +6,7 @@ CurriculumVitae.Collections = CurriculumVitae.Collections || {};
     'use strict';
 
     CurriculumVitae.Collections.Jobs = Backbone.Collection.extend({
-        url: 'data/jobs.json',
+        url: 'data/' + CurriculumVitae.Config.selectedLanguage + '/jobs.json',
         model: CurriculumVitae.Models.Job
     });
 
