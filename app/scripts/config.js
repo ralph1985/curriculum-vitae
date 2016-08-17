@@ -1,4 +1,4 @@
-/*global CurriculumVitae*/
+/*global CurriculumVitae, Polyglot, $*/
 
 CurriculumVitae.Config = CurriculumVitae.Config || {};
 
@@ -24,4 +24,20 @@ CurriculumVitae.Config = CurriculumVitae.Config || {};
 
     CurriculumVitae.Config.initLanguage();
 
+    CurriculumVitae.Config.loadLocales = function () {
+        var _self = this;
+
+        return $.getJSON('i18n/' + _self.selectedLanguage + '.json', function (data) {
+            console.table(data);
+
+            window.polyglot = new Polyglot({
+                locale: _self.selectedLanguage,
+                phrases: data
+            });
+
+            window.t = function (key) {
+                return window.polyglot.t(key);
+            };
+        });
+    };
 })();

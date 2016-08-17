@@ -1,5 +1,6 @@
 /*global CurriculumVitae, $*/
 
+console.time('test');
 
 window.CurriculumVitae = {
     Models: {},
@@ -10,6 +11,17 @@ window.CurriculumVitae = {
     init: function () {
         'use strict';
 
+        this.Routers.AppRouter = new CurriculumVitae.Routers.CurriculumVitae();
+
+        // CurriculumVitae.Routers.AppRouter.on('route:index', function (actions) {
+        //     console.log(actions);
+        // });
+
+
+        console.trace();
+
+        console.timeEnd('test');
+
         console.log('Hello from Backbone!');
     }
 };
@@ -17,5 +29,11 @@ window.CurriculumVitae = {
 $(document).ready(function () {
     'use strict';
 
-    CurriculumVitae.init();
+    $.when(CurriculumVitae.Config.loadLocales())
+        .done(function () {
+            CurriculumVitae.init();
+
+            var mainMenuView = new CurriculumVitae.Views.Menu();
+            $('#main-menu').html(mainMenuView.render());
+        });
 });

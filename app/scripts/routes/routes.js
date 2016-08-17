@@ -18,9 +18,7 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
         $container: $('#primary-content'),
 
         initialize: function () {
-            var _self = this;
-
-            _self.listJobs = new CurriculumVitae.Collections.Jobs();
+            this.listJobs = new CurriculumVitae.Collections.Jobs();
 
             // this.index();
 
@@ -101,11 +99,5 @@ CurriculumVitae.Routers = CurriculumVitae.Routers || {};
             return this.$container.html('');
         }
     });
-
-    CurriculumVitae.Routers.AppRouter = new CurriculumVitae.Routers.CurriculumVitae();
-
-    // CurriculumVitae.Routers.AppRouter.on('route:index', function (actions) {
-    //     console.log(actions);
-    // });
 
 })();
